@@ -1,0 +1,23 @@
+dataset_root: "/home/ubuntu/dataset/lerobot_dataset/crane_plus_roundtrip_phase"
+repo_id: "crane_plus_roundtrip_phase"
+output_directory: "/home/ubuntu/checkpoints/train/crane_plus_phase_act"
+config_path: "configs/crane_features.py"
+
+device: "cuda"
+training_steps: 30000
+log_freq: 100
+num_workers: 4
+batch_size: 16
+chunk_size: 32
+n_action_steps: 1
+learning_rate: 0.0001
+# モデルの大きさ(ACT の既定: dim_model 512, n_heads 8, dim_feedforward 3200, n_encoder_layers 4, n_decoder_layers 1)
+dim_model: 512
+n_heads: 8
+dim_feedforward: 3200
+n_encoder_layers: 6
+n_decoder_layers: 4
+delta_timestamps:
+  observation.environment_state: [0.0]
+  observation.state: [0.0]
+  action: [-0.1, 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0]

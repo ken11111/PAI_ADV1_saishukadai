@@ -1,0 +1,8 @@
+bag_dir: "/home/ubuntu/dataset/rosbags/roundtrip"
+output_dir: "/home/ubuntu/dataset/lerobot_dataset/crane_plus_roundtrip"
+config: "configs/crane_features.py"
+target_freq: 20
+trim_after_release_sec: 1.5  # [roundtrip 用] 最後にハンドを開いてから、この秒数で記録を切る
+drop_hold_frames: false
+trim_leading_hold: true  # [roundtrip 用] 記録の始めの、動き出す前に止まっている区間を除く
+add_time_feature: true  # [roundtrip 用] environment_state の4つ目に、動き出してからの経過時間(秒)を入れる

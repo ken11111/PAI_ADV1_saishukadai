@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+wandb/
+*.log
+pick180/traces/
+pick180/debug_policy/
+pick180/*_train_eval_*.txt
+pick180/fail_demo_*.txt

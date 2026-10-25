@@ -1,0 +1,11 @@
+bag_dir: "/home/ubuntu/dataset/rosbags/roundtrip"
+output_dir: "/home/ubuntu/dataset/lerobot_dataset/crane_plus_roundtrip_phase"
+config: "configs/crane_features.py"
+target_freq: 20
+trim_after_release_sec: 5.5  # [工程つき] 最後にハンドを開いてから、開始姿勢に戻って止まるまで(工程の番号で最初と区別できるので、止まっている区間も残す)
+drop_hold_frames: false
+trim_leading_hold: true  # [roundtrip 用] 記録の始めの、動き出す前に止まっている区間を除く
+add_time_feature: false
+add_phase_feature: true
+phase_time_stretch: [1.0]  # [工程つき] 工程内の経過時間を引き伸ばした見本を足す。[1.0, 1.25, 1.5] で試したところ、同じ状態に食い違う経過時間が付き、つかむ動作が崩れたので使わない
+final_hold_sec: 8.0  # [工程つき] 最後に開始姿勢で止まっている区間を足す(終わったあとに動き出さないように)
